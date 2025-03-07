@@ -1,3 +1,45 @@
+# Project Setup
+
+This document outlines the prerequisites and setup instructions for running this project.
+
+## Prerequisites
+
+* **.NET 9:** Ensure you have the .NET 9 SDK installed. You can download it from the official Microsoft website.
+* **Angular 14+:** This project requires Angular version 14 or higher. Install Node.js and npm (Node Package Manager) from [nodejs.org](https://nodejs.org/). Then, install the Angular CLI globally:
+
+    ```bash
+    npm install -g @angular/cli
+    ```
+
+## Setup
+
+1.  **Clone the Repository:** Clone the project repository to your local machine.
+
+2.  **Navigate to the Angular Project:** Open a terminal or command prompt and navigate to the directory containing your Angular project (where the `angular.json` file is located).
+
+3.  **Run `ng serve`:** Execute the following command to start the Angular development server:
+
+    ```bash
+    ng serve
+    ```
+
+    This will compile your Angular application and start a development server, typically accessible at `http://localhost:4200/`.
+
+4.  **Run the .NET Application:** Open another terminal or command prompt, navigate to the directory containing your .NET project's `.csproj` file, and run the .NET application.
+
+    ```bash
+    dotnet run
+    ```
+
+    The .NET application will start, and you can access it in your browser.
+
+**Important Notes:**
+
+* If you need to change the port that angular runs on, you can use the command `ng serve --port <port number>`.
+* If your .net application needs to use a different port, that can be configured in the .net applications launchSettings.json file.
+* Ensure that there are no port conflicts between the Angular development server and your .NET application.
+* For production deployments, remember to build your Angular application using `ng build --prod` (or `ng build --configuration production`) and serve the static files from your .NET application or a dedicated web server.
+
 Airport Search System
 
 Project Overview
