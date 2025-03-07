@@ -5,7 +5,8 @@ This document outlines the prerequisites and setup instructions for running this
 ## Prerequisites
 
 * **.NET 9:** Ensure you have the .NET 9 SDK installed. You can download it from the official Microsoft website.
-* **Angular 14+:** This project requires Angular version 14 or higher. Install Node.js and npm (Node Package Manager) from [nodejs.org](https://nodejs.org/). Then, install the Angular CLI globally:
+* **Node.js (16+ recommended):** Node.js and npm (Node Package Manager) are required for Angular development. Download and install them from [nodejs.org](https://nodejs.org/). Angular 14+ is typically compatible with recent stable Node.js versions.
+* **Angular CLI 14+:** Install the Angular CLI globally using npm:
 
     ```bash
     npm install -g @angular/cli
@@ -31,7 +32,7 @@ This document outlines the prerequisites and setup instructions for running this
     dotnet run
     ```
 
-    The .NET application will start, and you can access it in your browser.
+    The .NET application will start, and you can access it in your browser usually https://localhost:7227.
 
 **Important Notes:**
 
