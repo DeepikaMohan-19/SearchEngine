@@ -98,7 +98,7 @@ Local Setup Instructions
 bash
 Copy
 Edit
-git clone https://github.com/your-org/airport-search.git
+git clone <url>
 cd airport-search
 2. Backend Setup
 Prerequisites
