@@ -129,4 +129,4 @@ Azure Search
 App is hosted on Azure as well , here are the links
 
 API URL : https://searchenginewebapi-fd-assessment-baa0fmf6c4ccdre5.eastus2-01.azurewebsites.net/swagger/index.html
-UI Url :  
+UI Url :  https://searchengine-fd-assesment-c6dkhyggbzh4dtgc.eastus2-01.azurewebsites.net/
