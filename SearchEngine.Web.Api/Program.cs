@@ -25,9 +25,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowLocalhost", policy =>
+    options.AddPolicy("AllowHosts", policy =>
     {
-        policy.WithOrigins("http://localhost:4200")  // Allow requests from Angular app
+        policy.WithOrigins("http://localhost:4200", "https://https://searchenginewebapi-fd-assessment-baa0fmf6c4ccdre5.eastus2-01.azurewebsites.net")  // Allow requests from Angular app
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -182,7 +182,7 @@ app.UseSpa(spa =>
 });
 
 // Configure the HTTP request pipeline
-app.UseCors("AllowLocalhost");
+app.UseCors("AllowHosts");
 
 app.UseHttpsRedirection();
 
