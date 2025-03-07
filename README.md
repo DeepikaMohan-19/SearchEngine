@@ -125,3 +125,8 @@ This project is deployed on Azure using:
 Azure App Services (Backend API)
 Azure SQL Database
 Azure Search
+
+App is hosted on Azure as well , here are the links
+
+API URL : https://searchenginewebapi-fd-assessment-baa0fmf6c4ccdre5.eastus2-01.azurewebsites.net/swagger/index.html
+UI Url :  
