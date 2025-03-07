@@ -1,5 +1,6 @@
 using Asp.Versioning;
 using AspNetCoreRateLimit;
+using Microsoft.ApplicationInsights.AspNetCore.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -33,7 +34,10 @@ builder.Services.AddCors(options =>
 });
 builder.Services.AddControllers();
 
-builder.Services.AddApplicationInsightsTelemetry(builder.Configuration["ApplicationInsights:InstrumentationKey"]);
+builder.Services.AddApplicationInsightsTelemetry(new ApplicationInsightsServiceOptions
+{
+    ConnectionString = builder.Configuration.GetConnectionString("ApplicationInsights")
+});
 
 // Add API versioning
 builder.Services.AddApiVersioning(options =>
