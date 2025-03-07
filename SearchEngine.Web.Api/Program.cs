@@ -158,7 +158,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(options =>
     {
-        options.SwaggerEndpoint("/swagger/v1/swagger.json", "Search Engine v1");
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "SearchEngine v1");
         options.OAuthAppName("Search Engine");
         options.OAuthUsePkce();
     });

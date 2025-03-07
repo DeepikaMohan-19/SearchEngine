@@ -1,0 +1,75 @@
+<div class="search-container">
+    <h2>Search, Filter & Sort Airports</h2>
+
+    <!-- Filters Section -->
+    <div class="filters">
+        <!-- Search Input with Suggestions -->
+        <div class="search-box">
+            <input [(ngModel)]="searchTerm" (keyup)="onSearchInput()" placeholder="Search airports..." type="text" />
+            <button (click)="onSearch()">Search</button>
+
+            <!-- Suggestions Dropdown -->
+            <ul *ngIf="filteredSuggestions.length" class="suggestions">
+                <li *ngFor="let suggestion of filteredSuggestions" (click)="selectSuggestion(suggestion)">
+                    {{ suggestion }}
+                </li>
+            </ul>
+        </div>
+
+        <!-- Sort Dropdown -->
+        <label for="sort" class="filter-label">Sort By:</label>
+        <select id="sort" [(ngModel)]="selectedSort" name="sort" (change)="handleSortSelection()">
+            <option value="" disabled>Select Sort Type</option>
+            <option value="name">Name</option>
+            <option value="city">City</option>
+            <option value="country">Country</option>
+            <option value="iata">IATA Code</option>
+        </select>
+    </div>
+
+    <!-- Filters for City, Country, and IATA -->
+    <div class="filters">
+        <label for="city" class="filter-label">Filter By City:</label>
+        <select id="city" [(ngModel)]="selectedCity" name="city" (change)="handleCitySelection()">
+            <option value="" disabled>Select a city</option>
+            <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+        </select>
+
+        <label for="country" class="filter-label">Filter By Country:</label>
+        <select id="country" [(ngModel)]="selectedCountry" name="country" (change)="handleCountrySelection()">
+            <option value="" disabled>Select a country</option>
+            <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+        </select>
+
+        <label for="iata" class="filter-label">Filter By IATA:</label>
+        <select id="iata" [(ngModel)]="selectedIata" name="iata" (change)="handleIATASelection()">
+            <option value="" disabled>Select an IATA Code</option>
+            <option *ngFor="let iata of iatas" [value]="iata">{{ iata }}</option>
+        </select>
+    </div>
+
+    <!-- Search Results Table -->
+    <div *ngIf="airports.length > 0">
+        <h3>Search Results</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>IATA Code</th>
+                    <th>ICAO Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let airport of airports">
+                    <td>{{ airport.name }}</td>
+                    <td>{{ airport.city }}</td>
+                    <td>{{ airport.country }}</td>
+                    <td>{{ airport.iata }}</td>
+                    <td>{{ airport.icao }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
