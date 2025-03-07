@@ -157,18 +157,15 @@ app.UseEndpoints(endpoints =>
     endpoints.MapControllers();
 });
 
-if (app.Environment.IsDevelopment())
+app.UseSwagger();
+app.UseSwaggerUI(options =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(options =>
-    {
-        options.SwaggerEndpoint("/swagger/v1/swagger.json", "SearchEngine v1");
-        options.OAuthAppName("Search Engine");
-        options.OAuthUsePkce();
-    });
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "SearchEngine v1");
+    options.OAuthAppName("Search Engine");
+    options.OAuthUsePkce();
+});
 
-    app.MapOpenApi();
-}
+app.MapOpenApi();
 
 app.UseStaticFiles();
 
